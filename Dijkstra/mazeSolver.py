@@ -1,19 +1,19 @@
 import pygame
 import heapq
-import random
 
 
+COLORS = {
+    'GREEN': (88, 230, 53),
+    'LIGHTBLUE': (60, 174, 240),
+    'BLUE': (47, 37, 232),
+    'WHITE': (255, 255, 255),
+    'BLACK': (26, 18, 11),
+    'LIGHTGREY': (219, 230, 222),
+    'ORANGE': (209, 83, 29),
+    'GREY': (114, 123, 125),
+    'PURPLE': (101, 78, 146)
+}
 
-
-GREEN = 0x32de84
-LIGHTBLUE = 0xA6ECE0
-BLUE = (0, 0, 255)
-WHITE = (255, 255, 255)
-BLACK = (26, 18, 11)
-LIGHTGREY = 0xDBE6DE
-ORANGE = (255, 132, 0)
-GREY = (128, 128, 128)
-PURPLE = (101, 78, 146)
 
 
 class Node:
@@ -23,7 +23,7 @@ class Node:
         self.col = col
         self.x = row * width
         self.y = col * width
-        self.color = WHITE
+        self.color = COLORS['WHITE']
         self.neighbors = []
         self.width = width
         self.total_rows = total_rows
@@ -34,40 +34,40 @@ class Node:
 
     
     def is_visited(self):
-        return self.color == GREEN
+        return self.color == COLORS['GREEN']
 
     def is_unvisited(self):
-        return self.color == LIGHTBLUE
+        return self.color == COLORS['LIGHTBLUE']
 
     def is_barrier(self):
-        return self.color == BLACK
+        return self.color == COLORS['BLACK']
 
     def is_start(self):
-        return self.color == ORANGE
+        return self.color == COLORS['ORANGE']
 
     def is_end(self):
-        return self.color == PURPLE
+        return self.color == COLORS['PURPLE']
 
     def reset(self):
-        self.color = WHITE
+        self.color = COLORS['WHITE']
 
     def make_start(self):
-        self.color = ORANGE
+        self.color = COLORS['ORANGE']
 
     def make_visited(self):
-        self.color = GREEN
+        self.color = COLORS['GREEN']
 
     def make_unvisited(self):
-        self.color = LIGHTBLUE
+        self.color = COLORS['LIGHTBLUE']
 
     def make_barrier(self):
-        self.color = BLACK
+        self.color = COLORS['BLACK']
 
     def make_end(self):
-        self.color = PURPLE
+        self.color = COLORS['PURPLE']
 
     def make_path(self):
-        self.color = LIGHTGREY
+        self.color = COLORS['LIGHTGREY']
 
     def draw(self, win):
         
@@ -180,7 +180,7 @@ def dijkstra(draw, grid, start, end):
             return True
 
         for neighbor in current.neighbors:
-            new_dist = dist[current] + 1  # Assuming each edge has a weight of 1
+            new_dist = dist[current] + 1  # each edge has a weight of 1
             if new_dist < dist[neighbor]:
                 came_from[neighbor] = current
                 dist[neighbor] = new_dist
@@ -209,13 +209,13 @@ def make_grid(rows, width):
 def draw_grid(win, rows, width):
     gap = width // rows
     for i in range(rows):
-        pygame.draw.line(win, GREY, (0, i * gap), (width, i * gap))
+        pygame.draw.line(win, COLORS['GREY'], (0, i * gap), (width, i * gap))
         for j in range(rows):
-            pygame.draw.line(win, GREY, (j * gap, 0), (j * gap, width))
+            pygame.draw.line(win, COLORS['GREY'], (j * gap, 0), (j * gap, width))
 
 
 def draw(win, grid, rows, width):
-    win.fill(WHITE)
+    win.fill(COLORS['WHITE'])
 
     for row in grid:
         for node in row:
