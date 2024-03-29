@@ -18,7 +18,7 @@ class cell:
         self.state = state 
         self.neighbors = []
 
-
+                        
     def get_position(self):
             return self.row, self.col
     
@@ -56,7 +56,7 @@ class cell:
         c = self.col
         for i in range(r-1, r+2):  
             for j in range(c-1, c+2):
-                if ((i != r or j != c) and in_grid(i, j)):  # Exclude self
+                if ((i != r or j != c) and in_grid(i, j)):  # Exclude the cell itself from neighbors
                     neighbors.append(grid[i][j])
         return neighbors
 
@@ -129,7 +129,7 @@ def main(win, width):
                 pos = pygame.mouse.get_pos()
                 row, col = get_clicked_pos(pos, ROWS, width)
                 cell = grid[row][col]
-                cell.state = COLORS['BLACK']  # Change cell state to "alive"
+                cell.state = COLORS['BLACK']  
 
 
             if event.type == pygame.KEYDOWN:     # Check for key down event
