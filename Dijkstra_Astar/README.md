@@ -1,7 +1,7 @@
 
 ## Maze solver using Dijkstra and A* algorithms
 #### example for Dijkstra : 
-![Dijkstra](Dijkstra.gif)
+![Dijkstra](https://drive.google.com/uc?id=1w_K6IPIcWkgLLuV2TnCFE14Q7rLMc40c)
 
 #### example for A* : 
-![Astar](Astar.gif)
+![Astar](https://drive.google.com/us?id=1XlH8YDNL2ODGHrJ4clzPsCbyVofIGD-R)
