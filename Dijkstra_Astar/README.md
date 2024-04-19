@@ -4,4 +4,4 @@
 ![Dijkstra](https://drive.google.com/uc?id=1w_K6IPIcWkgLLuV2TnCFE14Q7rLMc40c)
 
 #### example for A* : 
-![Astar](https://drive.google.com/us?id=1XlH8YDNL2ODGHrJ4clzPsCbyVofIGD-R)
+![Astar](https://drive.google.com/uc?id=1XlH8YDNL2ODGHrJ4clzPsCbyVofIGD-R)
